@@ -1,0 +1,58 @@
+<div
+  class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
+>
+  <div class="order-summary pointer-events-auto w-screen max-w-2xl">
+    <div class="flex flex-col overflow-y-scroll bg-white shadow-xl">
+      <h1 class="text-2xl font-bold text-center py-5">Order Summary</h1>
+      <app-order-header></app-order-header>
+      <div class="py-3 px-4 sm:px-6">
+        <hr class="py-3" />
+        <div
+          class="flex py-2 justify-between text-base font-normal text-gray-900"
+        >
+          <p>Subtotal</p>
+          <p>{{ subTotal | currency }}</p>
+        </div>
+        <div
+          class="flex py-2 justify-between text-base font-normal text-gray-900"
+        >
+          <p>Tips</p>
+          <p>{{ tips | currency }}</p>
+        </div>
+        <div
+          class="flex py-2 justify-between text-base font-normal text-gray-900"
+        >
+          <p>Taxes</p>
+          <p>{{ tax | currency }}</p>
+        </div>
+        <div
+          class="flex py-2 justify-between text-base font-bold text-gray-900"
+        >
+          <p>Subtotal</p>
+          <p>{{ subTotal + tax + tips | currency }}</p>
+        </div>
+        <div class="flex pt-10">
+          <card-details class="w-full"></card-details>
+        </div>
+        <div class="flex pt-11 gap-4 flex-row">
+          <div class="basis-1/3">
+            <button
+              class="flex items-center justify-center rounded-full border-2 border-green-600 bg-white px-6 py-3 text-base font-normal text-green-600 shadow-sm hover:text-green-700 w-full"
+              (click)="goBack()"
+            >
+              Back
+            </button>
+          </div>
+          <div class="basis-2/3">
+            <button
+              class="w-full rounded-full border border-transparent bg-green-600 px-6 py-3 text-base font-normal text-white shadow-sm hover:bg-green-700"
+            >
+              Checkout
+            </button>
+          </div>
+        </div>
+        <div class="mt-6"></div>
+      </div>
+    </div>
+  </div>
+</div>
